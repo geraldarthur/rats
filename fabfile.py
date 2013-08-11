@@ -418,18 +418,6 @@ def deploy(remote='origin'):
             deploy_confs()
 
 """
-Cron jobs
-"""
-def cron_test():
-    """
-    Example cron task. Note we use "local" instead of "run"
-    because this will run on the server.
-    """
-    require('settings', provided_by=[production, staging])
-
-    local('echo $DEPLOYMENT_TARGET > /tmp/cron_test.txt')
-
-"""
 Destruction
 
 Changes to destruction require setup/deploy to a test host in order to test.
@@ -439,7 +427,7 @@ host and S3.
 def _confirm(message):
     answer = prompt(message, default="Not at all")
 
-    if answer.lower() not in ('y', 'yes', 'buzz off', 'screw you'):
+    if answer.lower() not in ('y', 'yes'):
         exit()
 
 
@@ -470,7 +458,7 @@ def nuke_confs():
                 sudo('rm %s' % log_path)
 
 
-def shiva_the_destroyer():
+def exterminate():
     """
     Deletes the app from s3
     """
@@ -492,35 +480,3 @@ def shiva_the_destroyer():
 
             if app_config.DEPLOY_SERVICES:
                 nuke_confs()
-"""
-App-template specific setup. Not relevant after the project is running.
-"""
-def app_template_bootstrap(project_name=None, repository_name=None):
-    """
-    Execute the bootstrap tasks for a new project.
-    """
-    config_files = ' '.join(['PROJECT_README.md', 'app_config.py'])
-
-    config = {}
-    config['$NEW_PROJECT_SLUG'] = os.getcwd().split('/')[-1]
-    config['$NEW_PROJECT_NAME'] = project_name or config['$NEW_PROJECT_SLUG'] 
-    config['$NEW_REPOSITORY_NAME'] = repository_name or config['$NEW_PROJECT_SLUG'] 
-    config['$NEW_PROJECT_FILENAME'] = config['$NEW_PROJECT_SLUG'].replace('-', '_')
-
-    _confirm("Have you created a Github repository named \"%s\"?" % config['$NEW_REPOSITORY_NAME'])
-
-    for k, v in config.items():
-        local('sed -i "" \'s|%s|%s|g\' %s' % (k, v, config_files))
-
-    local('rm -rf .git')
-    local('git init')
-    local('mv PROJECT_README.md README.md')
-    local('rm *.pyc')
-    local('git add * .gitignore')
-    local('git commit -am "Initial import from app-template."')
-    local('git remote add origin https://github.com/nprapps/%s.git' % config['$NEW_REPOSITORY_NAME'])
-    local('git push -u origin master')
-
-    local('npm install less universal-jst -g --prefix node_modules')
-
-    update_copy()

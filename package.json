@@ -1,0 +1,23 @@
+{
+  "name": "rats",
+  "version": "0.0.0",
+  "description": "Rodents in Bostons",
+  "main": "app.js",
+  "dependencies": {
+    "less": "~1.4.2",
+    "universal-jst": "~1.0.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/geraldarthur/rats.git"
+  },
+  "author": "",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/geraldarthur/rats/issues"
+  }
+}

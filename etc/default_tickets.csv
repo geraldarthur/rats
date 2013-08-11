@@ -1,10 +1,7 @@
 title,body,labels
-Update ad tags,,Launch TODO
 Update Facebook Open Graph tags,,Launch TODO
 Update Twitter Card tags,,Launch TODO
 Update Twitter/Facebook links,,Launch TODO
-Get npr.org redirect (short URL),,Launch TODO
-Create Seamus shell page and request redirect,,Launch TODO
 Update widget analytics with project name,,Launch TODO
 Browser testing: IE9,,
 Browser testing: IE10,,
@@ -18,8 +15,5 @@ Device testing: Android phone,,
 Device testing: Android tablet,,
 Data download,,
 Link to repo,,
-Ad,,
 Double-check analytics code,,Launch TODO
-DevOps: Enable scout monitor for /<project_slug>/test/,,Launch TODO
-Write the team blog post,,Launch TODO
-Update master sitemaps index and redeploy,,Launch TODO
+Write blog post,,Launch TODO
