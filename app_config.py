@@ -77,8 +77,8 @@ FACEBOOK = {
     'TITLE': PROJECT_NAME,
     'URL': SHARE_URL,
     'DESCRIPTION': PROJECT_DESCRIPTION,
-    'IMAGE_URL': '{{ S3_BASE_URL }}/img/boston-rats.jpg',
-    'APP_ID': '182272865189808'
+    'IMAGE_URL': '',
+    'APP_ID': '451779264921220'
 }
 
 """
