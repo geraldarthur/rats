@@ -91,6 +91,12 @@ SERVICES
 GOOGLE_ANALYTICS_ID = 'UA-5828686-4'
 
 """
+APP SPECIFIC
+"""
+MAPBOX_BASE_LAYER = 'geraldrich.map-skvteim6'
+MAPBOX_BASE_LAYER_RETINA = 'geraldrich.map-kdptw6zm'
+
+"""
 Utilities
 """
 def get_secrets():
