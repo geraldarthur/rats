@@ -21,20 +21,6 @@ def index():
     """
     return render_template('index.html', **make_context())
 
-@app.route('/widget.html')
-def widget():
-    """
-    Embeddable widget example page.
-    """
-    return render_template('widget.html', **make_context())
-
-@app.route('/test_widget.html')
-def test_widget():
-    """
-    Example page displaying widget at different embed sizes.
-    """
-    return render_template('test_widget.html', **make_context())
-
 @app.route('/test/test.html')
 def test_dir():
     return render_template('index.html', **make_context())
@@ -66,13 +52,6 @@ def _app_config_js():
     js = 'window.APP_CONFIG = ' + json.dumps(config)
 
     return js, 200, { 'Content-Type': 'application/javascript' }
-
-# Render copytext
-@app.route('/js/copy.js')
-def _copytext_js():
-    copy = 'window.COPY = ' + copytext.Copy().json()
-
-    return copy, 200, { 'Content-Type': 'application/javascript' }
 
 # Server arbitrary static files on-demand
 @app.route('/<path:path>')

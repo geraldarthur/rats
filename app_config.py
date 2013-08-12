@@ -54,15 +54,6 @@ DEPLOY_CRONTAB = False
 # If True, DEPLOY_TO_SERVERS must also be True
 DEPLOY_SERVICES = False
 
-# Services are the server-side services we want to enable and configure.
-# A three-tuple following this format:
-# (service name, service deployment path, service config file extension)
-SERVER_SERVICES = [
-    ('app', SERVER_REPOSITORY_PATH, 'ini'),
-    ('uwsgi', '/etc/init', 'conf'),
-    ('nginx', '/etc/nginx/locations-enabled', 'conf'),
-]
-
 # These variables will be set at runtime. See configure_targets() below
 S3_BUCKETS = []
 S3_BASE_URL = ''
@@ -73,12 +64,12 @@ DEBUG = True
 """
 COPY EDITING
 """
-COPY_GOOGLE_DOC_KEY = '0AlXMOHKxzQVRdHZuX1UycXplRlBfLVB0UVNldHJYZmc'
+COPY_GOOGLE_DOC_KEY = '0Antez86oOXPndFVVZXhRYy11VmpnVmZ4SVdNZnk2ZVE'
 
 """
 SHARING
 """
-PROJECT_DESCRIPTION = 'An opinionated project template for (mostly) server-less apps.'
+PROJECT_DESCRIPTION = 'A look at rodent 311 complaints in Boston in 2012'
 SHARE_URL = 'http://%s/%s/' % (PRODUCTION_S3_BUCKETS[0], PROJECT_SLUG)
 
 TWITTER = {

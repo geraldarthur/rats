@@ -89,8 +89,11 @@ class JavascriptIncluder(Includer):
         output = []
         src_paths = []
 
-        for src in self.includes:
-            src_paths.append('www/%s' % src)
+        try:
+            for src in self.includes:
+                src_paths.append('www/%s' % src)
+        except IOError:
+            pass
 
             with open('www/%s' % src) as f:
                 print '- compressing %s' % src

@@ -222,31 +222,6 @@ def checkout_latest(remote='origin'):
     run('cd %s; git fetch %s' % (app_config.SERVER_REPOSITORY_PATH, remote))
     run('cd %s; git checkout %s; git pull %s %s' % (app_config.SERVER_REPOSITORY_PATH, env.branch, remote, env.branch))
 
-def install_requirements():
-    """
-    Install the latest requirements.
-    """
-    require('settings', provided_by=[production, staging])
-
-    run('%(SERVER_VIRTUALENV_PATH)s/bin/pip install -U -r %(SERVER_REPOSITORY_PATH)s/requirements.txt' % app_config.__dict__)
-    run('cd %(SERVER_REPOSITORY_PATH)s; npm install less universal-jst -g --prefix node_modules' % app_config.__dict__)
-
-def install_crontab():
-    """
-    Install cron jobs script into cron.d.
-    """
-    require('settings', provided_by=[production, staging])
-
-    sudo('cp %(SERVER_REPOSITORY_PATH)s/crontab /etc/cron.d/%(PROJECT_FILENAME)s' % app_config.__dict__)
-
-def uninstall_crontab():
-    """
-    Remove a previously install cron jobs script from cron.d
-    """
-    require('settings', provided_by=[production, staging])
-
-    sudo('rm /etc/cron.d/%(PROJECT_FILENAME)s' % app_config.__dict__)
-
 def bootstrap_issues():
     """
     Bootstraps Github issues with default configuration.
