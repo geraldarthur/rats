@@ -33,9 +33,6 @@ DEPLOYMENT
 PRODUCTION_S3_BUCKETS = ['projects.geraldarthur.com', 'projects2.geraldarthur.com']
 STAGING_S3_BUCKETS = ['stage.geraldarthur.com']
 
-PRODUCTION_SERVERS = ['cron.geraldarthur.org']
-STAGING_SERVERS = ['50.112.92.131']
-
 # Should code be deployed to the web/cron servers?
 DEPLOY_TO_SERVERS = False
 
@@ -80,7 +77,7 @@ FACEBOOK = {
     'TITLE': PROJECT_NAME,
     'URL': SHARE_URL,
     'DESCRIPTION': PROJECT_DESCRIPTION,
-    'IMAGE_URL': '{{ S3_BASE_URL}}/img/boston-rats.jpg',
+    'IMAGE_URL': '{{ S3_BASE_URL }}/img/boston-rats.jpg',
     'APP_ID': '182272865189808'
 }
 
@@ -131,14 +128,14 @@ def configure_targets(deployment_target):
     if deployment_target == 'production':
         S3_BUCKETS = PRODUCTION_S3_BUCKETS
         S3_BASE_URL = 'http://%s/%s' % (S3_BUCKETS[0], PROJECT_SLUG)
-        SERVERS = PRODUCTION_SERVERS
-        SERVER_BASE_URL = 'http://%s/%s' % (SERVERS[0], PROJECT_SLUG)
+        # SERVERS = PRODUCTION_SERVERS
+        # SERVER_BASE_URL = 'http://%s/%s' % (SERVERS[0], PROJECT_SLUG)
         DEBUG = False
     elif deployment_target == 'staging':
         S3_BUCKETS = STAGING_S3_BUCKETS
         S3_BASE_URL = 'http://%s/%s' % (S3_BUCKETS[0], PROJECT_SLUG)
-        SERVERS = STAGING_SERVERS
-        SERVER_BASE_URL = 'http://%s/%s' % (SERVERS[0], PROJECT_SLUG)
+        # SERVERS = STAGING_SERVERS
+        # SERVER_BASE_URL = 'http://%s/%s' % (SERVERS[0], PROJECT_SLUG)
         DEBUG = True
     else:
         S3_BUCKETS = [] 
