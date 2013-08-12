@@ -105,7 +105,8 @@ def get_secrets():
     A method for accessing our secrets.
     """
     secrets = [
-        'EXAMPLE_SECRET'
+        'AWS_ACCESS_KEY_ID',
+        'AWS_SECRET_ACCESS_KEY'
     ]
 
     secrets_dict = {}
