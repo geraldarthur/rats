@@ -43,9 +43,9 @@
     <nav class="affix">
         <a href="http://www.bostonglobe.com/" target="_blank"><img src="{{ S3_BASE_URL }}/img/logo-bcom.png" id="flag" alt="Boston Globe"></a>
         <div id="share">
-            <a href="{{ S3_BASE_URL }}/about.html" target="_blank"><i class="icon-info-sign"></i></a>
-            <a rel="external" href="http://twitter.com/share?text={{ TWITTER.TEXT|urlencode }}&amp;url={{ TWITTER.URL|urlencode }}" alt="Share on Twitter" target="_blank" onclick="_gaq.push(['_trackEvent', 'Social', 'Click Twitter In Navbar', '{{ PROJECT_NAME }}']);"><i class="icon-twitter"></i></a>
-            <a rel="external" href="https://www.facebook.com/dialog/feed?app_id={{ FACEBOOK.APP_ID }}&amp;link={{ FACEBOOK.URL|urlencode }}&amp;name={{ FACEBOOK.TITLE|urlencode }}&amp;picture={{ FACEBOOK.IMAGE_URL|urlencode }}&amp;redirect_uri={{ FACEBOOK.URL|urlencode }}" alt="Share on Facebook" target="_blank" onclick="_gaq.push(['_trackEvent', 'Social', 'Click Facebook In Navbar', '{{ PROJECT_NAME }}']);"><i class="icon-facebook"></i></i></a>
+            <a id="about" href="{{ S3_BASE_URL }}/about.html" target="_blank"><i class="icon-info-sign"></i></a>
+            <a id="twitter" rel="external" href="http://twitter.com/share?text={{ TWITTER.TEXT|urlencode }}&amp;url={{ TWITTER.URL|urlencode }}" alt="Share on Twitter" target="_blank" onclick="_gaq.push(['_trackEvent', 'Social', 'Click Twitter In Navbar', '{{ PROJECT_NAME }}']);"><i class="icon-twitter"></i></a>
+            <a id="fb" rel="external" href="https://www.facebook.com/dialog/feed?app_id={{ FACEBOOK.APP_ID }}&amp;link={{ FACEBOOK.URL|urlencode }}&amp;name={{ FACEBOOK.TITLE|urlencode }}&amp;picture={{ FACEBOOK.IMAGE_URL|urlencode }}&amp;redirect_uri={{ FACEBOOK.URL|urlencode }}" alt="Share on Facebook" target="_blank" onclick="_gaq.push(['_trackEvent', 'Social', 'Click Facebook In Navbar', '{{ PROJECT_NAME }}']);"><i class="icon-facebook"></i></i></a>
         </div>
     </nav>
 

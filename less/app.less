@@ -17,15 +17,15 @@ a:hover {
 
 nav {
 	width: 100%;
-	height: 50px;
+	height: 55px;
 	overflow: hidden;
 	z-index:9999;
 	border-bottom: 2px solid @primary;
 	background: @white;
 	#flag {
-		position: relative;
+		position: absolute;
 		left: 0;
-		padding-left: 25px;
+		margin-left: 5px;
 	}
 
 	#share {
@@ -34,9 +34,9 @@ nav {
 		a {
 			float: left;
 			width: 55px;
-			height: 45px;
+			height: 55px;
 			padding: 15px 0 0 0;
-			border-left: 1px solid @white;
+			border-left: 1px dotted #000;
 			text-align: center;
 			cursor: pointer;
 			color: #000;
@@ -80,7 +80,7 @@ header {
 	margin-bottom: 10px;
 	#geolocate {
 		position: absolute;
-		z-index: 10000;
+		z-index: 8000;
 		font-size: 30px;
 		padding: 10px 12px;
 		bottom: 10px;
@@ -103,21 +103,16 @@ header {
 }
 
 // Disqus
-#disqus-thread { padding-top: 20px;}
+#disqus-thread { padding-top: 20px; }
 
 // Media queries
 @media (max-width: 767px) {
-	nav, header { 
-		margin-left: -20px; 
-		margin-right: 0px; 
-	}
-	nav { width: 109%;}
 	section.the-goods { margin: 10px; }
 }
 @media (max-width: 480px) {
 	h1 { font-size: 26px; }
 	#flag { 
-		max-width: 50%;
+		max-width: 45%;
 		top:11px;
 	}
 	#story-meta p { font-size: 11px; }
