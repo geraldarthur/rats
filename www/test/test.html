@@ -8,10 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <link rel="shortcut icon" href="./www/favicon.ico" />
+    <link rel="shortcut icon" href="/favicon.ico" />
 
     <!-- CSS -->
-    
     
     
     
@@ -34,9 +33,9 @@
     <meta property="og:url" content="http://projects.geraldarthur.com/rats/" />
     <meta property="og:type" content="article" />
     <meta property="og:description" content="A look at rodent 311 complaints in Boston in 2012" />
-    <meta property="og:image" content="" />
+    <meta property="og:image" content="{{ S3_BASE_URL}}/img/boston-rats.jpg" />
     <meta property="og:site_name" content="NPR.org" />
-    <meta property="fb:app_id" content="138837436154588" />
+    <meta property="fb:app_id" content="182272865189808" />
 
     
     
@@ -44,18 +43,21 @@
 <body>
     
 
-    <div id="share">
-        <a rel="external" href="http://twitter.com/share?text=Boston+Rodents&amp;url=http%3A%2F%2Fprojects.geraldarthur.com%2Frats%2F" alt="Share on Twitter" target="_blank" onclick="_gaq.push(['_trackEvent', 'Social', 'Click Twitter In Navbar', 'Boston Rodents']);"><i class="icon-facebook"></i></a>
-        <a rel="external" href="https://www.facebook.com/dialog/feed?app_id=138837436154588&amp;link=http%3A%2F%2Fprojects.geraldarthur.com%2Frats%2F&amp;name=Boston+Rodents&amp;picture=&amp;redirect_uri=http%3A%2F%2Fprojects.geraldarthur.com%2Frats%2F" alt="Share on Facebook" target="_blank" onclick="_gaq.push(['_trackEvent', 'Social', 'Click Facebook In Navbar', 'Boston Rodents']);"><i class="icon-facebook"></i></i></a>
-    </div>
+    <nav>
+        <a href="http://www.bostonglobe.com/" target="_blank"><img src="http://projects.geraldarthur.com/rats/img/logo-bcom.png" id="flag" alt="Boston Globe"></a>
+        <div id="share">
+            <a rel="external" href="http://twitter.com/share?text=Boston+Rodents&amp;url=http%3A%2F%2Fprojects.geraldarthur.com%2Frats%2F" alt="Share on Twitter" target="_blank" onclick="_gaq.push(['_trackEvent', 'Social', 'Click Twitter In Navbar', 'Boston Rodents']);"><i class="icon-twitter"></i></a>
+            <a rel="external" href="https://www.facebook.com/dialog/feed?app_id=182272865189808&amp;link=http%3A%2F%2Fprojects.geraldarthur.com%2Frats%2F&amp;name=Boston+Rodents&amp;picture=%7B%7B+S3_BASE_URL%7D%7D%2Fimg%2Fboston-rats.jpg&amp;redirect_uri=http%3A%2F%2Fprojects.geraldarthur.com%2Frats%2F" alt="Share on Facebook" target="_blank" onclick="_gaq.push(['_trackEvent', 'Social', 'Click Facebook In Navbar', 'Boston Rodents']);"><i class="icon-facebook"></i></i></a>
+        </div>
+    </nav>
 
     
 <header>
     <div class="container">
         <div class="row">
             <div class="span12">
-                <h1>Rodent Activity</h1>
-                <h2>Last year saw a spike in 311 complaints related to rodent activity. The following map is a look at some of the hotbeds of activity.</h2>
+                <h1>Eek, a Rat!</h1>
+                <h2>Help us locate areas of infestation.</h2>
             </div>
         </div>
     </div>
@@ -75,18 +77,35 @@
     </p>
 </div>
 
-<h2>Example COPY list</h2>
-<dl>
+<div id="copy">
     
-    <dt>jabberwocky</dt><dd>Invented or meaningless language; nonsense.</dd>
+    <p>Last year 311 received more calls related to <a href="http://www.boston.com/yourtown/news/allston_brighton/2012/08/city_officials_say_boston_rat.html" target="_blank">rodent activity</a> than in years past.</p>
     
-    <dt>Antioch</dt><dd>Land of the Holy Hand Grenade.</dd>
+    <p>This map shows concentrations of those reports. Although more reports do not mean more rats, the city has said that more reporting can help them better assess the infestation.</p>
     
-    <dt>swallow</dt><dd>What kind?</dd>
+    <p>Did we miss something? Add a photo <i class="icon-picture"></i> or comment below the map with more detailed information on where there's a problem.</p>
     
-</dl>
+</div>
 
-<div id="map"></div>
+<div id="map">
+    <div id="geolocate"><i class="icon-location-arrow"></i></div>
+</div>
+
+    <div id="disqus_thread"></div>
+      
+<script type="text/javascript">
+    var disqus_shortname = 'eclectophile';
+
+    (function() {
+        var dsq = document.createElement('script'); 
+        dsq.type = 'text/javascript'; 
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
 
                 </div>

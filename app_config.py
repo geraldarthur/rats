@@ -17,7 +17,6 @@ NAMES
 PROJECT_NAME = 'Boston Rodents'
 
 # Project name in urls
-# Use dashes, not underscores!
 PROJECT_SLUG = 'rats'
 
 # The name of the repository containing the source
