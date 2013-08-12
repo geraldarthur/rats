@@ -1,11 +1,4 @@
 $(function() {
-    var context = $.extend(APP_CONFIG, {
-        'template_path': 'jst/example.html',
-        'config': JSON.stringify(APP_CONFIG, null, 4),
-        'copy': JSON.stringify(COPY, null, 4)
-    });
-
-    var html = JST.example(context);
-
-    $('#template-example').html(html);
+	var map = L.mapbox.map('map', 'examples.map-y7l23tes')
+		.setView([37.9, -77], 5);
 });

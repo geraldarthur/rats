@@ -70,23 +70,7 @@
                     App content goes here.
                     {% endblock content %}
                 </div>
-                <div class="span4">
-                    {# 300x250 ad #}
-                    <div class="adwrapper">
-                        <div class="sponsor300">
-                            <script type="text/javascript">
-                            <!--
-                            if (DFP.shouldRenderForDevice('desktop')) {
-                                googletag.cmd.push(function() { googletag.display('ad-desktop'); });
-                            }
-                            // -->
-                            </script>
-                        </div>
-                    </div>
-                </div>
             </div>
-            {% block wide_content %}
-            {% endblock wide_content %}
         </div>
     </section>
     {% endblock outer_content %}
@@ -94,8 +78,8 @@
     {{ JS.push('js/lib/underscore.js') }}
     {{ JS.push('js/lib/moment.js') }}
     {{ JS.push('js/lib/bootstrap.js') }}
+    {{ JS.push('js/lib/mapbox.js') }}
     {% block extra_foot_js %}{% endblock extra_foot_js %}
-    {{ JS.push('js/templates.js') }}
     {{ JS.push('js/app.js') }}
     {{ JS.render('js/app-footer.min.js') }}
 
