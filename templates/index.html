@@ -26,11 +26,11 @@
     </p>
 </div>
 
-<dl>
+<div id="copy">
     {% for row in COPY.example_list %}
-    <dt>{{ row.term }}</dt><dd>{{ row.definition }}</dd>
+    <p>{{ row.term }} {{ row.definition }}</p>
     {% endfor %}
-</dl>
+</div>
 
 <div id="map">
     <div id="geolocate"><i class="icon-location-arrow"></i></div>

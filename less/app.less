@@ -4,7 +4,10 @@
 // Global variables
 @img-root: "../img";
 @primary: #9B1417;
+@secondary: #787878;
 @white: #fafafa;
+
+* { transition:color .35s ease-in; }
 
 a:hover {
 	color: @primary;
@@ -55,8 +58,15 @@ header {
 }
 
 // Byline
-#story-meta p {
-	margin-bottom: 0px;
+#story-meta {
+	margin-bottom: 30px;
+	color: @secondary;
+	font-size: 12px;
+	p { margin: 0 0 0;}
+}
+
+#copy p{
+	font-size: 16px;
 }
 
 // Map
@@ -78,6 +88,17 @@ header {
 	}
 }
 
+// Map Controls
+.map-legends, .map-legend {
+	width: 104px;
+	text-align: center;
+	margin-right: 0 !important;
+	border: none !important;
+	border-radius: 0 !important;
+	padding: 0 !important;
+}
+
+// Disqus
 #disqus-thread { padding-top: 20px;}
 
 // Media queries
