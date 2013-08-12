@@ -1,9 +1,68 @@
-{% extends '_base.html' %}
+<!DOCTYPE html>
+<html lang="en">
 
-{% block header_content %}
-{% endblock %}
+<head>
+    <title>Boston Rodents</title>
 
-{% block content %}
+    <meta name="description" content="A look at rodent 311 complaints in Boston in 2012">
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+    <!-- CSS -->
+    
+    
+    <link rel="stylesheet" type="text/css" href="less/app.less" />
+
+    <!-- JS -->
+    
+    
+    
+    
+    
+    
+    
+    <script type="text/javascript" src="js/app_config.js"></script>
+<script type="text/javascript" src="js/console.js"></script>
+<script type="text/javascript" src="js/lib/jquery-1.8.3.js"></script>
+<script type="text/javascript" src="js/lib/html5.js"></script>
+<script type="text/javascript" src="js/lib/modernizr.js"></script>
+<script type="text/javascript" src="js/lib/fastclick.js"></script>
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@geraldarthur">
+    <meta property="og:title" content="Boston Rodents" />
+    <meta property="og:url" content="http://projects.geraldarthur.com/rats/" />
+    <meta property="og:type" content="article" />
+    <meta property="og:description" content="A look at rodent 311 complaints in Boston in 2012" />
+    <meta property="og:image" content="{{ S3_BASE_URL }}/img/boston-rats.jpg" />
+    <meta property="og:site_name" content="NPR.org" />
+    <meta property="fb:app_id" content="182272865189808" />
+
+    
+    
+</head>
+<body>
+    
+
+    <nav>
+        <a href="http://www.bostonglobe.com/" target="_blank"><img src="http://127.0.0.1:8000/img/logo-bcom.png" id="flag" alt="Boston Globe"></a>
+        <div id="share">
+            <a href="http://127.0.0.1:8000/about" target="_blank"><i class="icon-info-sign"></i></a>
+            <a rel="external" href="http://twitter.com/share?text=Boston+Rodents&amp;url=http%3A%2F%2Fprojects.geraldarthur.com%2Frats%2F" alt="Share on Twitter" target="_blank" onclick="_gaq.push(['_trackEvent', 'Social', 'Click Twitter In Navbar', 'Boston Rodents']);"><i class="icon-twitter"></i></a>
+            <a rel="external" href="https://www.facebook.com/dialog/feed?app_id=182272865189808&amp;link=http%3A%2F%2Fprojects.geraldarthur.com%2Frats%2F&amp;name=Boston+Rodents&amp;picture=%7B%7B+S3_BASE_URL+%7D%7D%2Fimg%2Fboston-rats.jpg&amp;redirect_uri=http%3A%2F%2Fprojects.geraldarthur.com%2Frats%2F" alt="Share on Facebook" target="_blank" onclick="_gaq.push(['_trackEvent', 'Social', 'Click Facebook In Navbar', 'Boston Rodents']);"><i class="icon-facebook"></i></i></a>
+        </div>
+    </nav>
+
+    
+
+
+    <section class="the-goods">
+        <div class="container">
+            <div class="row">
+                <div id="main-content" class="span8">
+                    
     <h1>Rats?</h1>
 
     <p>While there's many cool and fancy ways to parse 311 data, I wanted to go for something concise that would generate feedback for the city improvement. Here's how this mini-interactive came together over the course of this weekend. Feel free to <a href="https://github.com/geraldarthur/rats/">poke around</a> under the hood as well</p>
@@ -51,4 +110,35 @@
     <p>Considering the fact that the city is testing out <a href="http://www.wbur.org/2013/03/29/boston-pothole-technology">new ways</a> to combat potholes and that Boston.com already has a <a href="http://www.boston.com/news/local/massachusetts/specials/013009_pothole/">pothole map</a>, my 2.0 would be to create a map template for the Globe that lets readers add, edit and remove markers for any number of subjects. (The idea would be to take the features of Gabriel's <a href="http://www.boston.com/news/local/massachusetts/specials/boston_marathon_bombing_stories/">Boston Marathon Bombing map</a> and make them more responsive and usable for other probjects.)</p>
 
     <p>Given more time, I would have also have sought out developer access to the Boston 311 API. Currently you have to email the developers to get access, which might be worthwhile for a 2.0 if the interactive performed well.</p>
-{% endblock %}
+
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    
+    <script type="text/javascript" src="js/lib/underscore.js"></script>
+<script type="text/javascript" src="js/lib/moment.js"></script>
+<script type="text/javascript" src="js/lib/bootstrap.js"></script>
+<script type="text/javascript" src="js/lib/mapbox.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+
+    <!-- GOOGLE ANALYTICS -->
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-5828686-4']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+</body>
+</html>
