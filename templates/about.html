@@ -4,15 +4,15 @@
     <div id="about-content">
         <h1><a href="{{ S3_BASE_URL }}">Rats?</a></h1>
 
-        <p>While there's many cool and fancy ways to parse 311 data, I wanted to go for something concise that could lead to more stories or possible city improvements. Here's how this mini-interactive came together over the course of this weekend. Feel free to <a href="https://github.com/geraldarthur/rats/">poke around</a> under the hood as well</p>
+        <p>While there's many cool and fancy ways to parse 311 data, I wanted to go for something concise that could lead to more stories or possible city improvements. Here's how this mini-interactive came together over the course of a Sunday evening and Monday morning. Feel free to <a target="_blank" href="https://github.com/geraldarthur/rats/">poke around</a> under the hood as well</p>
 
         <h2 id="data-interview">Interviewing the Data</h2>
 
-        <p>Whenever I get 311 data, my question is always what are people complaining about the most? But before I dove into that, I wanted to see how others had tried to answer this question. After Googled around, I saw <a href="http://www.wired.com/magazine/2010/11/ff_311_new_york/">several</a> <a href="http://visualizing.org/visualizations/nyc-311-composite">attractive</a> <a href="http://www.visualizing.org/visualizations/boston-311-heatmap">visualizations</a>, however none of them were insightful.</p>
+        <p>Whenever I get 311 data, my question is always what are people complaining about the most? But before I dove into that, I wanted to see how others had tried to answer this question. After Googled around, I saw <a target="_blank" href="http://www.wired.com/magazine/2010/11/ff_311_new_york/">several</a> <a target="_blank" href="http://visualizing.org/visualizations/nyc-311-composite">attractive</a> <a target="_blank" href="http://www.visualizing.org/visualizations/boston-311-heatmap">visualizations</a>, however none of them were insightful.</p>
 
         <p>Most visualisations just bombarded me with overall stats, and the latter was basically a fiery hexbin map of population density. It was time for me to choose whether I would be a generalist or a specialist. I chose the latter, hoping for one good story. My time at the Texas Tribune taught me that maps and visualizations that offered a hodge-podge of stats don't do as well as ones that stick to one aspect of the data.</p>
 
-        <p>Boston.com had <a href="http://www.boston.com/yourtown/boston/2013/06/13/caller-complaints-boston/ZAyvQbDoCfQJKYKIfRT2LK/gallery.html">already published</a> a listicle that gave me a sense of the most 311 calls. Nevertheless, I learned to always check it against a few clustering algorithms after dealing with messy <a href="http://stateimpact.npr.org/texas/2013/08/08/texas-charging-more-in-penalties-to-drilling-violators/">oil well inspection data</a>.</p>
+        <p>Boston.com had <a target="_blank" href="http://www.boston.com/yourtown/boston/2013/06/13/caller-complaints-boston/ZAyvQbDoCfQJKYKIfRT2LK/gallery.html">already published</a> a listicle that gave me a sense of the most 311 calls. Nevertheless, I learned to always check it against a few clustering algorithms after dealing with messy <a target="_blank" href="http://stateimpact.npr.org/texas/2013/08/08/texas-charging-more-in-penalties-to-drilling-violators/">oil well inspection data</a>.</p>
 
         <h2 id="open-refine">Open Refine</h2>
 
@@ -30,7 +30,7 @@
 
         <p>One of the biggest things I learned while working with NPR's News Apps team is to that you want to keep it DRY (aka 'do not repeat yourself'). Having modular parts that you can plug in allows for greater re-use in the future. This lead me back to NPR's app template for a couple reasons: LESS compiling, file compression, local development environment, and S3 hosting so I didn't have ot worry about caching.</p>
 
-        <p>Ultimately I plan on continuing to refactor NPR's app-template into a real, reusable template for another newsrooms. That means gutting a lot of the bits regarding advertisments, but keep the overall design pattern inspired by <a href="http://12factor.net/">The 12 Factor App</a>
+        <p>Ultimately I plan on continuing to refactor NPR's app-template into a real, reusable template for another newsrooms. That means gutting a lot of the bits regarding advertisments, but keep the overall design pattern inspired by <a target="_blank" href="http://12factor.net/">The 12 Factor App</a>
 
         <p>While there's a tiny bit of Python to glue everything together, the real nuts and bolts are still just HTML, CSS and Javascript.</p>
 
@@ -38,17 +38,17 @@
 
         <p>For a while I thought about creating a map with draggable markers, but I chose not to though because of the editorial implications.</p>
 
-        <p>This wouldn't have be too difficult since I spent most of the summer working on a <a href="http://apps.npr.org/playgrounds/create.html">similar UX</a>. However, I had my reservations. What's stopping someone from adding inappropriate content, like some of the markers on with WNYC's <a href="http://project.wnyc.org/watering-holes/">Watering Holes map</a>? It just seemd like a lot of sunk time and effort for version 1.0.</p>
+        <p>This wouldn't have be too difficult since I spent most of the summer working on a <a target="_blank" href="http://apps.npr.org/playgrounds/create.html">similar UX</a>. However, I had my reservations. What's stopping someone from adding inappropriate content, like some of the markers on with WNYC's <a target="_blank" href="http://project.wnyc.org/watering-holes/">Watering Holes map</a>? It just seemd like a lot of sunk time and effort for version 1.0.</p>
 
         <p>A simple Disqus thread with copy emphasizing adding a photo seemed more manageable. If this were actually published and did well, the comments would serve as their own narrative.</p>
 
         <p>Instead of going for that UX, I used the remaining time to get the map design succinct. A well designed map can easily go viral, and considering the topic I felt like this could be a conversation starter.</p>
 
-        <p>I made sure to create readable labels which positioned themselves appropriately at different zoom levels which you can view <a href="https://github.com/geraldarthur/rats/blob/master/style.mss">here</a>.</p>
+        <p>I made sure to create readable labels which positioned themselves appropriately at different zoom levels which you can view <a target="_blank" href="https://github.com/geraldarthur/rats/blob/master/style.mss">here</a>.</p>
 
         <h2 id="reflect">Refactor, Re-Use, Reflect</h2>
 
-        <p>Considering the fact that the city is testing out <a href="http://www.wbur.org/2013/03/29/boston-pothole-technology">new ways</a> to combat potholes and that Boston.com already has a <a href="http://www.boston.com/news/local/massachusetts/specials/013009_pothole/">pothole map</a>, my next steps would be to create a map template for the Globe that lets readers add, edit and remove markers for any number of subjects. (The idea would be to take the features of Gabriel's <a href="http://www.boston.com/news/local/massachusetts/specials/boston_marathon_bombing_stories/">Boston Marathon Bombing map</a> and make them more responsive and usable for other probjects.)</p>
+        <p>Considering the fact that the city is testing out <a target="_blank" href="http://www.wbur.org/2013/03/29/boston-pothole-technology">new ways</a> to combat potholes and that Boston.com already has a <a target="_blank" href="http://www.boston.com/news/local/massachusetts/specials/013009_pothole/">pothole map</a>, my next steps would be to create a map template for the Globe that lets readers add, edit and remove markers for any number of subjects. (The idea would be to take the features of Gabriel's <a target="_blank" href="http://www.boston.com/news/local/massachusetts/specials/boston_marathon_bombing_stories/">Boston Marathon Bombing map</a> and make them more responsive and usable for other probjects.)</p>
 
         <p>Given more time, I would have also have sought out developer access to the Boston 311 API. Currently you have to email the developers to get access, which might be worthwhile for a 2.0 if the interactive performed well.</p>
 

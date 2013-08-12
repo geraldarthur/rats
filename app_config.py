@@ -14,7 +14,7 @@ import os
 NAMES
 """
 # Project name used for display
-PROJECT_NAME = 'Boston Rodents'
+PROJECT_NAME = 'Eek, a Rat!'
 
 # Project name in urls
 PROJECT_SLUG = 'rats'

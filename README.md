@@ -1,5 +1,5 @@
 # Rats?
-While there's many cool and fancy ways to parse 311 data, I wanted to go for something concise that would generate feedback for the city improvement. Here's how this mini-interactive came together over the course of this weekend. Feel free to [poke around](https://github.com/geraldarthur/rats/) under the hood as well
+While there's many cool and fancy ways to parse 311 data, I wanted to go for something concise that would generate feedback for the city improvement. Here's how this mini-interactive came together over the course of a Sunday evening and Monday morning. Feel free to [poke around](https://github.com/geraldarthur/rats/) under the hood as well
 
 ## Interviewing the Data
 Whenever I get 311 data, my question is always what are people complaining about the most? But before I dove into that, I wanted to see how others had tried to answer this question. After Googled around, I saw [several](http://www.wired.com/magazine/2010/11/ff_311_new_york/) [attractive](http://visualizing.org/visualizations/nyc-311-composite) [visualizations](http://www.visualizing.org/visualizations/boston-311-heatmap), however none of them were insightful.
