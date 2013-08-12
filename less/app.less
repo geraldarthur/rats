@@ -57,8 +57,18 @@ header {
 	margin: 0;
 	border-bottom: 2px solid #fff;
 
-	h1 { font-size: 48px; font-family: Arial, Helvetica, sans-serif; color: @primary; margin-bottom: 11px; }
-	h2 { font-size: 15px; color: #666; margin: 0; }
+	h1 { 
+		font-size: 48px; 
+		font-family: Arial, Helvetica, sans-serif; 
+		color: @primary; 
+		margin-bottom: 0; 
+	}
+	h2 { 
+		font-size: 15px; 
+		color: #666; 
+		margin: 0; 
+		margin-left: 2px; 
+	}
 }
 
 // Byline
@@ -104,6 +114,12 @@ header {
 
 // Disqus
 #disqus-thread { padding-top: 20px; }
+
+// About
+
+#about-content {
+	margin-top: 65px;
+}
 
 // Media queries
 @media (max-width: 767px) {
