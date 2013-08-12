@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <link rel="shortcut icon" href="./www/favicon.ico" />
+    <link rel="shortcut icon" href="/favicon.ico" />
 
     <!-- CSS -->
     {{ CSS.push('less/app.less') }}
@@ -42,7 +42,7 @@
     {% block outer_content %}
 
     <nav>
-        <a href="http://www.bostonglobe.com/" target="_blank"><img src="{{ S3_BASE_URL }}/img/logo-bg.png" id="flag" alt="Boston Globe"></a>
+        <a href="http://www.bostonglobe.com/" target="_blank"><img src="{{ S3_BASE_URL }}/img/logo-bcom.png" id="flag" alt="Boston Globe"></a>
         <div id="share">
             <a rel="external" href="http://twitter.com/share?text={{ TWITTER.TEXT|urlencode }}&amp;url={{ TWITTER.URL|urlencode }}" alt="Share on Twitter" target="_blank" onclick="_gaq.push(['_trackEvent', 'Social', 'Click Twitter In Navbar', '{{ PROJECT_NAME }}']);"><i class="icon-twitter"></i></a>
             <a rel="external" href="https://www.facebook.com/dialog/feed?app_id={{ FACEBOOK.APP_ID }}&amp;link={{ FACEBOOK.URL|urlencode }}&amp;name={{ FACEBOOK.TITLE|urlencode }}&amp;picture={{ FACEBOOK.IMAGE_URL|urlencode }}&amp;redirect_uri={{ FACEBOOK.URL|urlencode }}" alt="Share on Facebook" target="_blank" onclick="_gaq.push(['_trackEvent', 'Social', 'Click Facebook In Navbar', '{{ PROJECT_NAME }}']);"><i class="icon-facebook"></i></i></a>

@@ -4,8 +4,8 @@ var IS_MOBILE = Modernizr.touch;
 
 $(function() {
 
-	SOUTHWEST_BOUND = [42.2026,-71.2664,];
-	NORTHWEST_BOUND = [42.4428,-70.9642,];
+	SOUTHWEST_BOUND = [42.2026,-71.2664];
+	NORTHWEST_BOUND = [42.4428,-70.9642];
 
 	FastClick.attach(document.body);
 
