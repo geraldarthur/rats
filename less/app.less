@@ -10,9 +10,6 @@
 a:hover {
 	text-decoration: none;
 	color: @primary;
-	i {
-		color:@white;
-	}
 }
 
 nav {
@@ -27,7 +24,6 @@ nav {
 		left: 0;
 		margin-left: 5px;
 	}
-
 	#share {
 		color: #000;
 		float: right;
@@ -45,6 +41,7 @@ nav {
 			&:hover { 
 				background-color:@primary;
 				opacity:0.9;
+				color:@white;
 			}
 		}
 	}
@@ -53,7 +50,7 @@ nav {
 // Header
 header {
 	background-color: #d9d9d9;
-	padding: 40px 30px 30px 30px;
+	padding: 40px 30px 30px 17px;
 	margin: 0;
 	border-bottom: 2px solid #fff;
 
@@ -125,11 +122,17 @@ header {
 	margin-top: 65px;
 }
 
+#scroll {
+	margin-bottom: 15px;
+	margin-top: 15px;
+}
+
 // Media queries
 @media (max-width: 767px) {
 	section.the-goods { 
 		margin: 0 15px 0 15px; 
 	}
+	header { padding-left: 10px;}
 }
 @media (max-width: 480px) {
 	h1 { font-size: 26px; }
