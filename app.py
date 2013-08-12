@@ -21,7 +21,7 @@ def index():
     """
     return render_template('index.html', **make_context())
 
-@app.route('/about')
+@app.route('/about.html')
 def about():
     """
     Example view demonstrating rendering a simple HTML page.
