@@ -41,7 +41,7 @@
     {% block outer_content %}
 
     <nav class="affix">
-        <a href="http://www.bostonglobe.com/" target="_blank"><img src="{{ S3_BASE_URL }}/img/logo-bcom.png" id="flag" alt="Boston Globe"></a>
+        <a href="http://www.boston.com/" target="_blank"><img src="{{ S3_BASE_URL }}/img/logo-bcom.png" id="flag" alt="Boston Globe"></a>
         <div id="share">
             <a id="about" href="{{ S3_BASE_URL }}/about.html" target="_blank"><i class="icon-info-sign"></i></a>
             <a id="twitter" rel="external" href="http://twitter.com/share?text={{ TWITTER.TEXT|urlencode }}&amp;url={{ TWITTER.URL|urlencode }}" alt="Share on Twitter" target="_blank" onclick="_gaq.push(['_trackEvent', 'Social', 'Click Twitter In Navbar', '{{ PROJECT_NAME }}']);"><i class="icon-twitter"></i></a>
