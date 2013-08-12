@@ -1,60 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends '_base.html' %}
 
-<head>
-    <title>Boston Rodents</title>
-
-    <meta name="description" content="A look at rodent 311 complaints in Boston in 2012">
-    <meta http-equiv="X-UA-Compatible" content="IE=8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <link rel="shortcut icon" href="/favicon.ico" />
-
-    <!-- CSS -->
-    
-    
-    <link rel="stylesheet" type="text/css" href="css/app.min.css" />
-
-    <!-- JS -->
-    
-    
-    
-    <script type="text/javascript" src="js/app-header.min.js"></script>
-
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="@geraldarthur">
-    <meta property="og:title" content="Boston Rodents" />
-    <meta property="og:url" content="http://projects.geraldarthur.com/rats/" />
-    <meta property="og:type" content="article" />
-    <meta property="og:description" content="A look at rodent 311 complaints in Boston in 2012" />
-    <meta property="og:image" content="{{ S3_BASE_URL }}/img/boston-rats.jpg" />
-    <meta property="og:site_name" content="NPR.org" />
-    <meta property="fb:app_id" content="182272865189808" />
-
-    
-    
-</head>
-<body>
-    
-
-    <nav>
-        <a href="http://www.bostonglobe.com/" target="_blank"><img src="http://127.0.0.1:8000/img/logo-bcom.png" id="flag" alt="Boston Globe"></a>
-        <div id="share">
-            <a href="http://projects.geraldarthur.com/rats/about.html" target="_blank"><i class="icon-info-sign"></i></a>
-            <a rel="external" href="http://twitter.com/share?text=Boston+Rodents&amp;url=http%3A%2F%2Fprojects.geraldarthur.com%2Frats%2F" alt="Share on Twitter" target="_blank" onclick="_gaq.push(['_trackEvent', 'Social', 'Click Twitter In Navbar', 'Boston Rodents']);"><i class="icon-twitter"></i></a>
-            <a rel="external" href="https://www.facebook.com/dialog/feed?app_id=182272865189808&amp;link=http%3A%2F%2Fprojects.geraldarthur.com%2Frats%2F&amp;name=Boston+Rodents&amp;picture=%7B%7B+S3_BASE_URL+%7D%7D%2Fimg%2Fboston-rats.jpg&amp;redirect_uri=http%3A%2F%2Fprojects.geraldarthur.com%2Frats%2F" alt="Share on Facebook" target="_blank" onclick="_gaq.push(['_trackEvent', 'Social', 'Click Facebook In Navbar', 'Boston Rodents']);"><i class="icon-facebook"></i></i></a>
-        </div>
-    </nav>
-
-    
-
-
-    <section class="the-goods">
-        <div class="container">
-            <div class="row">
-                <div id="main-content" class="span8">
-                    
-    <h1><a href="/rats/">Rats?</a></h1>
+    {% block content %}
+    <h1><a href="{{ S3_BASE_URL }}">Rats?</a></h1>
 
     <p>While there's many cool and fancy ways to parse 311 data, I wanted to go for something concise that would generate feedback for the city improvement. Here's how this mini-interactive came together over the course of this weekend. Feel free to <a href="https://github.com/geraldarthur/rats/">poke around</a> under the hood as well</p>
 
@@ -106,19 +53,6 @@
             </div>
         </div>
     </section>
-
-    <script type="text/javascript" src="js/app-footer.min.js"></script>
-
-    <!-- GOOGLE ANALYTICS -->
-    <script type="text/javascript">
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-5828686-4']);
-        _gaq.push(['_trackPageview']);
-        (function() {
-            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
-    </script>
+    {% endblock %}
 </body>
 </html>
