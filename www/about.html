@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Eek, a Rat!</title>
+
+    <meta name="description" content="A look at rodent 311 complaints in Boston in 2012">
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+    <!-- CSS -->
+    
+    
+    <link rel="stylesheet" type="text/css" href="css/app.min.css" />
+
+    <!-- JS -->
+    
+    
+    
+    
+    
+    
+    
+    <script type="text/javascript" src="js/app-header.min.js"></script>
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@geraldarthur">
+    <meta property="og:title" content="Eek, a Rat!" />
+    <meta property="og:url" content="http://projects.geraldarthur.com/rats/" />
+    <meta property="og:type" content="article" />
+    <meta property="og:description" content="A look at rodent 311 complaints in Boston in 2012" />
+    <meta property="og:site_name" content="projects.geraldarthur.com" />
+    <meta property="fb:app_id" content="451779264921220" />
+
+    
+    
+</head>
+<body id="#top">
+    
+
+    <nav class="affix">
+        <a href="http://www.boston.com/" target="_blank"><img src="http://projects.geraldarthur.com/rats/img/logo-bcom.png" id="flag" alt="Boston Globe"></a>
+        <div id="share">
+            <a id="about" href="http://projects.geraldarthur.com/rats/about.html" target="_blank"><i class="icon-info-sign"></i></a>
+            <a id="twitter" rel="external" href="http://twitter.com/share?text=Eek%2C+a+Rat%21&amp;url=http%3A%2F%2Fprojects.geraldarthur.com%2Frats%2F" alt="Share on Twitter" target="_blank" onclick="_gaq.push(['_trackEvent', 'Social', 'Click Twitter In Navbar', 'Eek, a Rat!']);"><i class="icon-twitter"></i></a>
+            <a id="fb" rel="external" href="https://www.facebook.com/dialog/feed?app_id=451779264921220&amp;link=http%3A%2F%2Fprojects.geraldarthur.com%2Frats%2F&amp;name=Eek%2C+a+Rat%21&amp;picture=&amp;redirect_uri=http%3A%2F%2Fprojects.geraldarthur.com%2Frats%2F" alt="Share on Facebook" target="_blank" onclick="_gaq.push(['_trackEvent', 'Social', 'Click Facebook In Navbar', 'Eek, a Rat!']);"><i class="icon-facebook"></i></i></a>
+        </div>
+    </nav>
+
+    
+    
+
+    <section class="the-goods">
+        <div class="container">
+            <div class="row">
+                <div id="main-content" class="span8">
+                    
+    <div id="about-content">
+        <p class="lead">The following is just a weekend hack and is no way affiliated with Boston.com</p>
+
+        <h1><a href="http://projects.geraldarthur.com/rats">Rats?</a></h1>
+
+        <p>While there's many cool and fancy ways to parse 311 data, I wanted to go for something concise that could lead to more stories or possible city improvements. Here's how this mini-interactive came together over the course of a Sunday evening and Monday morning. Feel free to <a target="_blank" href="https://github.com/geraldarthur/rats/">poke around</a> under the hood as well</p>
+
+        <h2 id="data-interview">Interviewing the Data</h2>
+
+        <p>Whenever I get 311 data, my question is always what are people complaining about the most? But before I dove into that, I wanted to see how others had tried to answer this question. After Googled around, I saw <a target="_blank" href="http://www.wired.com/magazine/2010/11/ff_311_new_york/">several</a> <a target="_blank" href="http://visualizing.org/visualizations/nyc-311-composite">attractive</a> <a target="_blank" href="http://www.visualizing.org/visualizations/boston-311-heatmap">visualizations</a>, however none of them were insightful.</p>
+
+        <p>Most visualisations just bombarded me with overall stats, and the latter was basically a fiery hexbin map of population density. It was time for me to choose whether I would be a generalist or a specialist. I chose the latter, hoping for one good story. My time at the Texas Tribune taught me that maps and visualizations that offered a hodge-podge of stats don't do as well as ones that stick to one aspect of the data.</p>
+
+        <p>Boston.com had <a target="_blank" href="http://www.boston.com/yourtown/boston/2013/06/13/caller-complaints-boston/ZAyvQbDoCfQJKYKIfRT2LK/gallery.html">already published</a> a listicle that gave me a sense of the most 311 calls. Nevertheless, I learned to always check it against a few clustering algorithms after dealing with messy <a target="_blank" href="http://stateimpact.npr.org/texas/2013/08/08/texas-charging-more-in-penalties-to-drilling-violators/">oil well inspection data</a>.</p>
+
+        <h2 id="open-refine">Open Refine</h2>
+
+        <p>Mostly I use Refine for its clustering algorithms or Google Refine Expression Language for string operations.</p>
+
+        <p>In doing so, I quickly discovered that Boston.com's list did not go to the lengths I was going. In 2012 there were 8133 pothole-related complaints, bringing it to the second most largest 311 complaint.</p>
+
+        <p>The reason? City Workers can file an internal complaint to better tag problematic road conditions. Nevertheless that's still a lot of potholes.</p>
+
+        <p>So I used the Google's Expression Language, aka GREL, to clean up the latitudes and longitudes and map out these potholes. While the data was loading, I took the opportunity to read up about Boston's road conditions.</p>
+
+        <p>Turns out, this is a well known problem for the city, and the fact that city workers could file internal complaints didn't quite answer my question of what people are complaining about in general. So I decided to couch potholes once I saw that most of them occured on main roads and go for rodent activity instead.</p>
+
+        <h2 id="dry">DRYing out the Project</h2>
+
+        <p>One of the biggest things I learned while working with NPR's News Apps team is to that you want to keep it DRY (aka 'do not repeat yourself'). Having modular parts that you can plug in allows for greater re-use in the future. This lead me back to NPR's app template for a couple reasons: LESS compiling, file compression, local development environment, and S3 hosting so I didn't have ot worry about caching.</p>
+
+        <p>Ultimately I plan on continuing to refactor NPR's app-template into a real, reusable template for another newsrooms. That means gutting a lot of the bits regarding advertisments, but keep the overall design pattern inspired by <a target="_blank" href="http://12factor.net/">The 12 Factor App</a>
+
+        <p>While there's a tiny bit of Python to glue everything together, the real nuts and bolts are still just HTML, CSS and Javascript.</p>
+
+        <h2 id="ui-ux">UI/UX</h2>
+
+        <p>For a while I thought about creating a map with draggable markers, but I chose not to though because of the editorial implications.</p>
+
+        <p>This wouldn't have be too difficult since I spent most of the summer working on a <a target="_blank" href="http://apps.npr.org/playgrounds/create.html">similar UX</a>. However, I had my reservations. What's stopping someone from adding inappropriate content, like some of the markers on with WNYC's <a target="_blank" href="http://project.wnyc.org/watering-holes/">Watering Holes map</a>? It just seemd like a lot of sunk time and effort for version 1.0.</p>
+
+        <p>A simple Disqus thread with copy emphasizing adding a photo seemed more manageable. If this were actually published and did well, the comments would serve as their own narrative.</p>
+
+        <p>I used the remaining time to get the map design succinct. A well designed map can easily go viral, and considering the topic I felt like this could be a conversation starter.</p>
+
+        <p>I made sure to create readable labels which positioned themselves appropriately at different zoom levels which you can view <a target="_blank" href="https://github.com/geraldarthur/rats/blob/master/style.mss">here</a>.</p>
+
+        <h2 id="reflect">Refactor, Re-Use, Reflect</h2>
+
+        <p>Considering the fact that the city is testing out <a target="_blank" href="http://www.wbur.org/2013/03/29/boston-pothole-technology">new ways</a> to combat potholes and that Boston.com already has a <a target="_blank" href="http://www.boston.com/news/local/massachusetts/specials/013009_pothole/">pothole map</a>, my next steps would be to create a map template that lets readers add, edit and remove markers for any number of subjects. (The idea would be to take the features of Gabriel's <a target="_blank" href="http://www.boston.com/news/local/massachusetts/specials/boston_marathon_bombing_stories/">Boston Marathon Bombing map</a> and make them more responsive and usable for other probjects.)</p>
+
+        <p>Given more time, I would have also have sought out developer access to the Boston 311 API. Currently you have to email the developers to get access, which might be worthwhile for a 2.0 if the interactive performed well.</p>
+
+        <a href="#top" id="scroll" class="btn btn-block btn-primary visible-sm"><i class="icon-arrow-up"></i> Scroll Up</a>
+    </div>
+    
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    
+    <script type="text/javascript" src="js/app-footer.min.js"></script>
+
+    <!-- GOOGLE ANALYTICS -->
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-43091946-1']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+</body>
+</html>
